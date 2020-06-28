@@ -1,23 +1,24 @@
 medicationsearch
 -----------------
 
-This is a short guide on setting up the system and environment dependencies required for the service application to run.  
+For a given medication name, medication search will utilize fuzzy search to return both the brand name and associated generic name of the medicine along with strengths.  
 
-How does the service work
+The brand name is the name given by the company for marketing, sales purpose.
+
+The generic name  is the active ingredient. 
+
+This is a short guide about the service, setting up the system and environment dependencies required for the application to run.  
+
+How does the search service work
 -----------------
-
-This is a client side react and server side express application to demonstrate fuzzy search.
-
-For a given medication name, search will use fuzzy search to return both brandName and associated genericName medications along with strengths.  
 
 Search supports partial searching (i.e "lipi") and spelling mistakes (i.e "lipitore")  
 
 The results returned are ordered by highest matching score.  
 
-The backend is express nodejs, and the front end is written in react running on port 4000  
+This is a react front end wirh a node/express backend.   
 
-Use http://localhost:4000/ 
-
+This runs on http://localhost:4000/ 
  
 Limitations
 -----------------

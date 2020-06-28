@@ -55,7 +55,7 @@ class AutoComplete extends React.Component {
                     this.setState({ suggestions: result })
                 },
                 // Note: it's important to handle errors here
-                // instead of a catch() block so that we don't swallow
+                // instead of a catch() block else we will swallow
                 // exceptions from actual bugs in components.
                 (error) => {
                     this.setState({
@@ -80,7 +80,8 @@ class AutoComplete extends React.Component {
 
         return (
             <div className="App1">
-                <h1>Medication Search Demo</h1>
+                <div className="title">
+                    Medication Search for brands and associated generics</div>
                 <Autosuggest
                     suggestions={suggestions}
                     onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
