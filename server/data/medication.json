@@ -19715,6 +19715,26 @@
         "s": "8%"
     },
     {
+        "b": "LIPTRUZET",
+        "g": "ATORVASTATIN CALCIUM; EZETIMIBE",
+        "s": "EQ 10MG BASE"
+    },
+    {
+        "b": "LIPTRUZET",
+        "g": "ATORVASTATIN CALCIUM; EZETIMIBE",
+        "s": "EQ 20MG BASE"
+    },
+    {
+        "b": "LIPTRUZET",
+        "g": "ATORVASTATIN CALCIUM; EZETIMIBE",
+        "s": "EQ 40MG BASE"
+    },
+    {
+        "b": "LIPTRUZET",
+        "g": "ATORVASTATIN CALCIUM; EZETIMIBE",
+        "s": "EQ 80MG BASE"
+    },
+    {
         "b": "LIPITOR",
         "g": "ATORVASTATIN CALCIUM",
         "s": "EQ 10MG BASE"

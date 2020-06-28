@@ -8,7 +8,7 @@ function App () {
     <div className="App">
       <header className="App-header">
         <Autocomplete />
-        <img src={logo} className="App-logo" alt="medicine logo" type="image/jp2" />
+        <img src={logo} className="App-logo" alt="medicine logo" />
         <p>
           Utilizing approximate string matching, informally known as fuzzy search, partial truth...
         </p>
