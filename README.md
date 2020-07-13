@@ -16,7 +16,7 @@ Search supports partial searching (i.e "lipi") and spelling mistakes (i.e "lipit
 
 The results returned are ordered by highest matching score.  
 
-This is a react front end wirh a node/express backend.   
+This is a react front end with a node/express backend.   
 
 This runs on http://localhost:4000/ 
  
@@ -38,15 +38,19 @@ The medication list /data/medications.json was created by scrubbing FDA dataset 
 
 Project Structure
 -----------------
-/src , /public 
-    This is the react front end 
+
+**react front end**  
+
+/src   
+/public   
+ 
+
+**express application**
 
 /Server
 
-    This is an express application, it is divided as following:- 
-
---server/routes         - API layer, configued to run on default port **3000** 
---server/controller     - Manages the request to find medications
+--server/routes         - API layer, configued to run on default port **3000**    
+--server/controller     - Manages the request to find medications    
 --server/data           - Medication data file  
 --server/tests          - Unit tests for api 
 
@@ -71,7 +75,7 @@ Run Unit Tests
 ---------------------
 
 To run server side unit tests, the command is ``npm run test-server``  
-To run service side unit tests in debug, the command is ``npm run test-server:debug``
+To run server side unit tests in debug, the command is ``npm run test-server:debug``
 
 Postman 
 ---------------------
