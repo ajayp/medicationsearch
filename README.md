@@ -1,11 +1,11 @@
-medicationsearch
+About
 -----------------
 
-For a given medication name, medication search will utilize fuzzy search to return both the brand name and associated generic name of the medicine along with strengths.  
+For a given medication name, medication search will utilize fuzzy search to return both the brand name and associated generic name of the medication along with strengths.  
 
 The brand name is the name given by the company for marketing, sales purpose.
 
-The generic name  is the active ingredient. 
+The generic name is the active ingredient. 
 
 This is a short guide about the service, setting up the system and environment dependencies required for the application to run.  
 
@@ -18,7 +18,7 @@ The results returned are ordered by highest matching score.
 
 This is a react front end with a node/express backend.   
 
-This runs on http://localhost:4000/ 
+Runs on http://localhost:4000/ 
  
 Limitations
 -----------------
