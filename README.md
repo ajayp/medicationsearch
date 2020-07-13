@@ -18,7 +18,7 @@ The results returned are ordered by highest matching score.
 
 This is a react front end with a node/express backend.   
 
-Runs on http://localhost:4000/ 
+Runs on http://localhost:3000/ 
  
 Limitations
 -----------------
