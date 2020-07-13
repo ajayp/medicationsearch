@@ -49,10 +49,10 @@ Project Structure
 
 /Server
 
---server/routes         - API layer, configued to run on default port **3000**    
---server/controller     - Manages the request to find medications    
---server/data           - Medication data file  
---server/tests          - Unit tests for api 
+/server/routes         - API layer, configued to run on default port **3000**    
+/server/controller     - Manages the request to find medications    
+/server/data           - Medication data file  
+/server/tests           - Unit tests for api 
 
 
 Node Library Dependencies
