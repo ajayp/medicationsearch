@@ -16,7 +16,7 @@ class AutoComplete extends React.Component {
 
     componentWillMount () {
         this.onSuggestionsFetchRequested = debounce(
-            1,
+            0.5,
             this.onSuggestionsFetchRequested
         )
     }
