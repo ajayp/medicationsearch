@@ -63,7 +63,6 @@ class AutoComplete extends React.Component {
             .then(res => res.json())
             .then(
                 (result) => {
-                    console.log(result)
                     this.setState({ suggestions: result })
                 },
                 // Note: it's important to handle errors here
