@@ -13,11 +13,9 @@ code {
 }
 
 .title {
-
- padding: 15px;
+  padding: 15px;
   color: #fff;
   font-size: 25px;
- 
   text-align:center
 }
 
@@ -60,7 +58,7 @@ code {
   padding: 0;
   background-color: #fff;
   list-style-type: none;
-  width: 770px;
+  width: 820px;
   border: 1px solid #eee;
 }
 
@@ -73,7 +71,6 @@ code {
   color: #000;
   font-size: 20px;
   letter-spacing: normal;
-
 }
 
 .react-autosuggest__suggestion--highlighted {

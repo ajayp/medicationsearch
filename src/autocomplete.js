@@ -34,9 +34,20 @@ class AutoComplete extends React.Component {
     }
 
     renderSuggestion = suggestion => {
+        let genericName;
+        let brandName = suggestion.b;
+        if (suggestion.b === suggestion.g) {
+            brandName += ' (generic)';
+        } else {
+            genericName = `(${suggestion.g})`;
+            if (genericName.length > 15) {
+                genericName = genericName.substring(0, 15) + '..)';
+            }
+            genericName = genericName.toLowerCase();
+        }
         return (
             <div className="brandname">
-                <div>{suggestion.b}</div>
+                <div>{brandName} {genericName}</div>
                 <div className="strength">{suggestion.s}</div>
             </div>
         )
@@ -52,6 +63,7 @@ class AutoComplete extends React.Component {
             .then(res => res.json())
             .then(
                 (result) => {
+                    console.log(result)
                     this.setState({ suggestions: result })
                 },
                 // Note: it's important to handle errors here
