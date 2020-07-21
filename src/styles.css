@@ -26,7 +26,7 @@ code {
 }
 
 .react-autosuggest__input {
-  width: 750px;
+  width: 800px;
   height: 16px;
   padding: 10px;
   font-weight: 300;
@@ -82,6 +82,14 @@ code {
   align-items: center;
   justify-content: space-between;
   font-size: 80%;
+  white-space: pre;
+}
+
+.generic {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  font-size: 10px;
 }
 
 .strength {

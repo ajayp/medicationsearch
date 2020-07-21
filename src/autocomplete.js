@@ -26,7 +26,7 @@ class AutoComplete extends React.Component {
     }
 
     getSuggestions = value => {
-        const escapedValue = escapeRegexCharacters(value.trim());
+        const escapedValue = escapeRegexCharacters(value);
         if (escapedValue === '') {
             return [];
         }
@@ -36,18 +36,26 @@ class AutoComplete extends React.Component {
     renderSuggestion = suggestion => {
         let genericName;
         let brandName = suggestion.b;
+
+        if (brandName.length < 44) {
+            //pad it brand name
+            brandName += '                                         ';
+        }
+
         if (suggestion.b === suggestion.g) {
-            brandName += ' (generic)';
+            genericName = '(generic)';
         } else {
             genericName = `(${suggestion.g})`;
-            if (genericName.length > 15) {
-                genericName = genericName.substring(0, 15) + '..)';
-            }
             genericName = genericName.toLowerCase();
         }
+
+
         return (
             <div className="brandname">
-                <div>{brandName} {genericName}</div>
+                <div>{brandName}
+                    <div className="generic">{genericName}</div>
+                </div>
+
                 <div className="strength">{suggestion.s}</div>
             </div>
         )
