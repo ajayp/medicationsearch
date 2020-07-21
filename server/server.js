@@ -8,6 +8,7 @@ const helmet = require('helmet');
 const cors = require('cors');
 const logger = require('./logger/logger');
 
+
 // Import routes
 const medicationRouter = require('./routes/medication-route');
 // Setup default port
@@ -15,6 +16,7 @@ const PORT = process.env.PORT || 4000;
 // Create express app
 const app = express();
 // Implement middleware
+app.use(express.static(__dirname + '/build'))
 app.use(cors());
 app.use(helmet());
 app.use(express.json());
