@@ -16,7 +16,7 @@ class AutoComplete extends React.Component {
 
     componentWillMount () {
         this.onSuggestionsFetchRequested = debounce(
-            1,
+            0.5,
             this.onSuggestionsFetchRequested
         )
     }
@@ -26,7 +26,7 @@ class AutoComplete extends React.Component {
     }
 
     getSuggestions = value => {
-        const escapedValue = escapeRegexCharacters(value.trim());
+        const escapedValue = escapeRegexCharacters(value);
         if (escapedValue === '') {
             return [];
         }
@@ -34,9 +34,28 @@ class AutoComplete extends React.Component {
     }
 
     renderSuggestion = suggestion => {
+        let genericName;
+        let brandName = suggestion.b;
+
+        if (brandName.length < 44) {
+            //pad it brand name
+            brandName += '                                         ';
+        }
+
+        if (suggestion.b === suggestion.g) {
+            genericName = '(generic)';
+        } else {
+            genericName = `(${suggestion.g})`;
+            genericName = genericName.toLowerCase();
+        }
+
+
         return (
             <div className="brandname">
-                <div>{suggestion.b}</div>
+                <div>{brandName}
+                    <div className="generic">{genericName}</div>
+                </div>
+
                 <div className="strength">{suggestion.s}</div>
             </div>
         )
