@@ -28,7 +28,7 @@
     "jest": "24.9.0",
     "supertest": "^4.0.2"
   },
-  "proxy": "http://localhost:4000",
+  "proxy": "http://0.0.0.0:4000",
   "scripts": {
     "build": "node ./buildScript",
     "start-front": "react-scripts start",
