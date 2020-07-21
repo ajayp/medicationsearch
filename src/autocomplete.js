@@ -49,7 +49,6 @@ class AutoComplete extends React.Component {
             genericName = genericName.toLowerCase();
         }
 
-
         return (
             <div className="brandname">
                 <div>{brandName}
