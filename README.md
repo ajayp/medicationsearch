@@ -12,6 +12,9 @@ The generic name is the active ingredient.
 
 This is a short guide about the service, setting up the system and environment dependencies required for the application to run.  
 
+https://medicationsearch.herokuapp.com/  
+
+
 How does the search service work
 -----------------
 
