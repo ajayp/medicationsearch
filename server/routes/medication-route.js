@@ -6,7 +6,6 @@ const medicationSearchController = require('../controllers/medicationsearch-cont
 const router = express.Router();
 // clean up accent chars
 const utils = require('../utils/utils');
-
 //logger
 const logger = require('../logger/logger');
 
