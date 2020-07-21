@@ -35,7 +35,7 @@
     "build-front": "react-scripts build",
     "test-front": "react-scripts test",
     "eject-front": "react-scripts eject",
-    "start-server": "node server/server.js",
+    "start-server": "node server/server.js ",
     "start-server:debug": "cross-env NODE_ENV=development nodemon --inspect server/server.js ",
     "start": "npm run start-server",
     "test-server": "cross-env NODE_ENV=development jest ./server/**/*.test.js",

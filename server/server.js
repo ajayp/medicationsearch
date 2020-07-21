@@ -30,11 +30,11 @@ app.set('query parser', (queryString) => {
     return new URLSearchParams(queryString)
 })
 
-if (process.env.NODE_ENV && process.env.NODE_ENV !== 'development') {
-    app.get('*', (req, res) => {
-        res.sendFile('build/index.html', { root: __dirname })
-    })
-}
+// if (process.env.NODE_ENV && process.env.NODE_ENV !== 'development') {
+//     app.get('*', (req, res) => {
+//         res.sendFile('build/index.html', { root: __dirname })
+//     })
+// }
 
 // Implement route for /api/search
 app.use('/api/search', medicationRouter);
