@@ -39,7 +39,8 @@
     "start-server:debug": "cross-env NODE_ENV=development nodemon --inspect server/server.js ",
     "start": "concurrently \"npm run start-server\" \"npm run start-front\" --kill-others",
     "test-server": "cross-env NODE_ENV=development jest ./server/**/*.test.js",
-    "test-server:debug": "cross-env NODE_ENV=development node --inspect node_modules/.bin/jest --testTimeout=10000 ./server/**/*.test.js"
+    "test-server:debug": "cross-env NODE_ENV=development node --inspect node_modules/.bin/jest --testTimeout=10000 ./server/**/*.test.js",
+    "heroku-postbuild": "npm install && npm run build"
   },
   "jest": {
     "testEnvironment": "node",
