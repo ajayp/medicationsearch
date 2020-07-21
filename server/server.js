@@ -28,11 +28,8 @@ app.set('query parser', (queryString) => {
     return new URLSearchParams(queryString)
 })
 
-if (process.env.NODE_ENV && process.env.NODE_ENV !== 'development') {
-    app.get('*', (req, res) => {
-        res.sendFile('build/index.html', { root: __dirname })
-    })
-}
+// implement route for react build
+app.use(express.static(__dirname + '/build'))
 
 // Implement route for /api/search
 app.use('/api/search', medicationRouter);
