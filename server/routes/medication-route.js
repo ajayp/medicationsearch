@@ -15,6 +15,7 @@ var whitelist = [process.env.ORIGIN, 'http://localhost:3000']
 var corsOptionsDelegate = function (req, callback) {
     console.log(req)
     var corsOptions;
+    console.log(req.header('Origin'))
     if (whitelist.indexOf(req.header('Origin')) !== -1) {
         corsOptions = { origin: true, credentials: true }; // reflect (enable) the requested origin in the CORS response
     } else {
