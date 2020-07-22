@@ -8,8 +8,10 @@ const router = express.Router();
 const utils = require('../utils/utils');
 //logger
 const logger = require('../logger/logger');
+//cors
+const cors = require('cors');
 
-router.get('/*', async (req, res) => {
+router.get('/*', cors(), async (req, res) => {
     try {
         let query = new URLSearchParams(req.query)
         if (!query.has('q')) {

@@ -26,7 +26,7 @@ class AutoComplete extends React.Component {
     }
 
     getSuggestions = value => {
-        const escapedValue = escapeRegexCharacters(value);
+        const escapedValue = escapeRegexCharacters(value.trim());
         if (escapedValue === '') {
             return [];
         }
