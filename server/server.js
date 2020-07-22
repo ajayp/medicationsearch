@@ -29,6 +29,7 @@ app.use(csp({
         scriptSrc: ["'self'", "'unsafe-inline'"],
         styleSrc: ["'self'"],
         imgSrc: ["'self'"],
+        manifestSrc: ["'self'"],
         upgradeInsecureRequests: true,
     },
     setAllHeaders: false,
