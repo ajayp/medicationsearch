@@ -11,10 +11,12 @@ const logger = require('../logger/logger');
 
 const cors = require('cors');
 
-var whitelist = [process.env.ORIGIN, 'http://localhost:3000']
+
+var whitelist = [process.env.ORIGIN, 'http://localhost:3001']
 var corsOptionsDelegate = function (req, callback) {
-    console.log(req)
+    //console.log(req.header)
     var corsOptions;
+    console.log(req.headers);
     console.log(req.header('Origin'))
     if (whitelist.indexOf(req.header('Origin')) !== -1) {
         corsOptions = { origin: true, credentials: true }; // reflect (enable) the requested origin in the CORS response
@@ -24,7 +26,8 @@ var corsOptionsDelegate = function (req, callback) {
     callback(null, corsOptions); // callback expects two parameters: error and options
 };
 
-router.get('/*', cors(corsOptionsDelegate), async (req, res) => {
+// router.get('/*', cors(corsOptionsDelegate), async (req, res) => {
+router.get('/*', async (req, res) => {
     try {
         let query = new URLSearchParams(req.query)
         if (!query.has('q')) {
