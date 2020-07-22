@@ -21,6 +21,22 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+const csp = require('helmet-csp')
+
+app.use(csp({
+    directives: {
+        defaultSrc: ["'none'"],
+        scriptSrc: ["'self'", "'unsafe-inline'"],
+        styleSrc: ["'self'"],
+        imgSrc: ["'self'"],
+        manifestSrc: ["'self'"],
+        connectSrc: ["'self'"],
+        upgradeInsecureRequests: true,
+    },
+    setAllHeaders: false,
+    disableAndroid: false,
+    browserSniff: true
+}));
 
 app.disable('x-powered-by'); //server side on port 4000 due to proxy 
 
