@@ -15,7 +15,7 @@ const PORT = process.env.PORT || 4000;
 // Create express app
 const app = express();
 // Implement middleware
-app.use(cors());
+//app.use(cors());
 app.use(compression());
 app.use(helmet());
 app.use(express.json());
@@ -40,9 +40,38 @@ app.use(csp({
 }));
 app.disable('x-powered-by'); //server side on port 4000 due to proxy 
 
+
+// app.use((req, res, next) => {
+//     res.header("Access-Control-Allow-Origin", process.env.ORIGIN || "122.22.22.22");
+//     next();
+// });
+
+
+var whitelist = [process.env.ORIGIN, 'http://localhost:3000']
+var corsOptions = {
+    origin: function (req, callback) {
+        console.log(req)
+        if (whitelist.indexOf(req) !== -1) {
+            callback(null, true)
+        } else {
+            callback(new Error('Not allowed by CORS'))
+        }
+    }
+}
+
+
+app.use(cors(corsOptions));
+
+app.use((req, res, next) => {
+    res.header("Access-Control-Allow-Origin", process.env.ORIGIN || "122.22.22.22");
+    next();
+});
+
+
 app.set('query parser', (queryString) => {
     return new URLSearchParams(queryString)
 })
+
 
 // implement route for react build
 app.use(express.static(__dirname + '/build'))
