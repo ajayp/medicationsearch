@@ -76,7 +76,7 @@ app.set('query parser', (queryString) => {
 // implement route for react build
 app.use(express.static(__dirname + '/build'))
 
-app.options('/api/search', cors(corsOptions));
+//app.options('/api/search', cors(corsOptions));
 
 // Implement route for /api/search
 app.use('/api/search', medicationRouter);

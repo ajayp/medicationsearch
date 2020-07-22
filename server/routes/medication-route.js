@@ -9,7 +9,22 @@ const utils = require('../utils/utils');
 //logger
 const logger = require('../logger/logger');
 
-router.get('/*', async (req, res) => {
+const cors = require('cors');
+
+var whitelist = [process.env.ORIGIN, 'http://localhost:3000']
+var corsOptions = {
+    origin: function (req, callback) {
+        console.log(req)
+        if (whitelist.indexOf(req) !== -1) {
+            callback(null, true)
+        } else {
+            callback(new Error('Not allowed by CORS'))
+        }
+    }
+}
+
+
+router.get('/*', cors(corsOptions), async (req, res) => {
     try {
         let query = new URLSearchParams(req.query)
         if (!query.has('q')) {
