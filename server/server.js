@@ -30,6 +30,7 @@ app.use(csp({
         styleSrc: ["'self'"],
         imgSrc: ["'self'"],
         manifestSrc: ["'self'"],
+        connectSrc: ["'self'"],
         upgradeInsecureRequests: true,
     },
     setAllHeaders: false,
