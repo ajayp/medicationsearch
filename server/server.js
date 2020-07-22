@@ -59,13 +59,13 @@ var corsOptions = {
     }
 }
 
+// app.use(cors(corsOptions));
 
-app.use(cors(corsOptions));
-
-app.use((req, res, next) => {
-    res.header("Access-Control-Allow-Origin", process.env.ORIGIN || "122.22.22.22");
-    next();
-});
+// app.use((req, res, next) => {
+//     console.log(req)
+//     // res.header("Access-Control-Allow-Origin", process.env.ORIGIN || "122.22.22.22");
+//     next();
+// });
 
 
 app.set('query parser', (queryString) => {
@@ -75,6 +75,8 @@ app.set('query parser', (queryString) => {
 
 // implement route for react build
 app.use(express.static(__dirname + '/build'))
+
+app.options('/api/search', cors(corsOptions));
 
 // Implement route for /api/search
 app.use('/api/search', medicationRouter);
