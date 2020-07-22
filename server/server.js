@@ -16,13 +16,14 @@ const PORT = process.env.PORT || 4000;
 const app = express();
 // Implement middleware
 app.use(cors());
+app.use(compression());
 app.use(helmet());
 app.use(express.json());
 app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-const csp = require('helmet-csp')
 
+const csp = require('helmet-csp');
 app.use(csp({
     directives: {
         defaultSrc: ["'none'"],
@@ -37,7 +38,6 @@ app.use(csp({
     disableAndroid: false,
     browserSniff: true
 }));
-
 app.disable('x-powered-by'); //server side on port 4000 due to proxy 
 
 app.set('query parser', (queryString) => {
