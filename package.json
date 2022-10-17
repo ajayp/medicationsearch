@@ -16,7 +16,7 @@
     "fuse.js": "^3.6.1",
     "helmet": "^3.23.3",
     "morgan": "^1.10.0",
-    "nodemon": "^2.0.4",
+    "nodemon": "^2.0.20",
     "react": "^16.13.1",
     "react-autosuggest": "^10.0.2",
     "react-dom": "^16.13.1",
