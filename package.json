@@ -20,7 +20,7 @@
     "react": "^16.13.1",
     "react-autosuggest": "^10.0.2",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1",
+    "react-scripts": "5.0.1",
     "throttle-debounce": "^2.2.1",
     "winston": "^3.3.3"
   },
